@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %} <title>Document</title> {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="outer-l">
+            <div class="inner">
+                <a href="#">Ignis</a>
+            </div>
+
+        </div>
+        {% if user.is_authenticated %}
+        <div class="outer-r">
+            <div class="inner">
+                {{request.user.username}}
+            </div>
+            <div class="inner">
+                <form action="/logout/" method="get">
+                    <button type="submit" class="profile__button">Logout</button>
+                </form>
+
+            </div>
+
+        </div>
+        {% else %}
+        <div class=" outer-r">
+            <div class="inner">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#signup">
+                    Sign up
+                </button>
+            </div>
+            <div class="inner">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#signin">
+                    Sign in
+                </button>
+
+            </div>
+
+        </div>
+        {% endif %}
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/signup/" method="POST">
+                        {% csrf_token %}
+                        <div class="f">
+                            <div class="f1">
+                                <label for="Username"> Username </label>
+                                <input type="text" name='username'>
+                            </div>
+                            <div class="f1">
+                                <label for="password"> Password </label>
+                                <input type="password" name="password">
+                            </div>
+                            <div class="f1">
+                                <label for="email"> E-Mail </label>
+                                <input type="email" name="email">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinLabel">Sign in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/signin/" method="POST">
+                        {% csrf_token %}
+                        <div class="f">
+                            <div class="f1">
+                                <label for="Username"> Username </label>
+                                <input type="text" name='username'>
+                            </div>
+                            <div class="f1">
+                                <label for="password"> Password </label>
+                                <input type="password" name="password">
+                            </div>
+
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <div class="modal fade" id="date" tabindex="-1" aria-labelledby="dateLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dateLabel">Sign in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/date/" method="POST" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <div class="f">
+                            <div class="f1">
+                                <label for="title"> Title </label>
+                                <input type="text" class="form-control" name='title'>
+                            </div>
+                            <div class="f1">
+                                <label for="title"> Description </label>
+                                <input type="text" class="form-control" name='description'>
+                            </div>
+                            <div class="f1">
+                                <label for="title"> Location </label>
+                                <input type="text" class="form-control" name='location'>
+                            </div>
+                            <div class="f1">
+                                <label for="password">Date And Time </label>
+                                <input type="datetime-local" class="form-control" name="date">
+                            </div>
+
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="inputGroupFile04"
+                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="image">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                        </div>
+                </div>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <br>
+    {% if user.is_authenticated %}
+    <button type="button" style="margin-left: 95%;" data-bs-toggle="modal" data-bs-target="#date">
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+        </svg>
+    </button>
+
+    {% endif %}
+    {% block content %}
+
+    {% endblock content %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'base.js' %}"></script>
+</body>
+
+</html>

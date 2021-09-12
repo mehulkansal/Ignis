@@ -1,0 +1,153 @@
+
+body
+{
+ background-color: 
+ #90A4AE;
+ justify-content: center;
+}
+
+.nav
+{
+
+    display: flex;
+    flex-direction:row;
+    background-color:#424242;
+    padding: 5px;
+    align-items: center;
+    border: 5px;
+    justify-content: space-between;
+}
+.outer-l
+{
+    display: flex;
+    flex-direction:row;
+    background-color:#424242;
+    width: 400px;
+ justify-content: space-between;
+
+}
+.outer-r
+{
+    display: flex;
+    flex-direction:row;
+    background-color:#424242;
+ justify-content: space-between;
+
+
+}
+.inner
+{
+    height: 50%;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    color: 
+    #F5F5F5;
+    border: 10px;
+    border-radius: 10px;
+}
+a
+{
+    color: 
+    #F5F5F5;
+    text-decoration: none;
+    
+}
+a:hover
+{
+  color:
+  #FFCDD2;
+}
+.box >
+{
+padding:10%;
+margin:10%;
+width: 80%;
+height: 100%;
+border: 20px;
+    border-color: chartreuse;
+    border-radius: 20px;
+    display: flex;
+    direction: column;
+    justify-content: space-between;
+  background-color: green;
+
+}
+.boxi
+{
+
+    width:80%;
+    display: flex;
+    flex-direction: row;
+  background-color:#E0E0E0;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+    background-color:#E0E0E0;
+    padding-left :5%;
+    margin-left:10%;
+  margin-bottom:10px;
+    border: 20px;
+    border-radius: 20px;
+
+
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px;
+  
+  height: 100px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  opacity:0.8;
+}
+.boxii
+{
+  width:50%;
+  height: 90px;
+}
+.des
+{
+    font-family: Montserrat, sans-serif;
+}
+.boxii:hover {
+  opacity:0.8;
+}
+.h
+{
+  font-weight:bold;
+  
+}
+.d
+{
+  font-weight:100;
+}
+svg:hover{
+  opacity:0.5;
+}
+button
+{
+  border:none;
+  outline:none;
+  background:none;
+}
+.f1
+{
+
+}
+
+.like__button{
+  cursor: pointer;
+}
+
+.like__button:hover {
+  color: red;
+}
+
+.add-color {
+  color: red;
+}

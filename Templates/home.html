@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+{% block content %}
+<div class="box">
+    {% for obj in objects %}
+    <div class="boxi">
+        <div class="boxii">
+            <img src="{{obj.image.url}}">
+        </div>
+        <div class="boxii">
+            <div class="des h"> {{obj.title}}</div>
+            <div class="des d">{{obj.description}}</div>
+            <div class="des d"> {{obj.location}}</div>
+            <div class="des d"> {{obj.time}}</div>
+        </div>
+        <div class="boxii">
+            <i class="material-icons like__button number-{{obj.id}} " style="height: 50px;">favorite_border</i>
+        </div>
+
+    </div>
+
+</div>
+{% endfor %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock content %}
