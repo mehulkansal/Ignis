@@ -1,25 +1,63 @@
 {% extends 'Base.html' %}
 {% block content %}
 <div class="box">
-    {% for obj in objects %}
+
+    {% if request.user.is_authenticated %}
+    {% for obj in Liked %}
     <div class="boxi">
         <div class="boxii">
             <img src="{{obj.image.url}}">
         </div>
         <div class="boxii">
             <div class="des h"> {{obj.title}}</div>
+            <br>
             <div class="des d">{{obj.description}}</div>
             <div class="des d"> {{obj.location}}</div>
             <div class="des d"> {{obj.time}}</div>
         </div>
-        <div class="boxii">
-            <i class="material-icons like__button number-{{obj.id}} " style="height: 50px;">favorite_border</i>
+        <div class="boxii" align="center">
+            <i class="material-icons like__button number-{{obj.id}} " style="font-size: 36px ;">favorite</i>
         </div>
-
     </div>
+    {% endfor %}
+    {% for obj in Not_Liked %}
+    <div class="boxi">
+        <div class="boxii">
+            <img src="{{obj.image.url}}">
+        </div>
+        <div class="boxii">
+            <div class="des h"> {{obj.title}}</div>
+            <br>
+            <div class="des d">{{obj.description}}</div>
+            <div class="des d"> {{obj.location}}</div>
+            <div class="des d"> {{obj.time}}</div>
+        </div>
+        <div class="boxii" align="center">
+            <i class="material-icons like__button number-{{obj.id}} " style="font-size: 36px ;">favorite_border</i>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for obj in Posts %}
+    <div class="boxi">
+        <div class="boxii">
+            <img src="{{obj.image.url}}">
+        </div>
+        <div class="boxii">
+            <div class="des h"> {{obj.title}}</div>
+            <br>
+            <div class="des d">{{obj.description}}</div>
+            <div class="des d"> {{obj.location}}</div>
+            <div class="des d"> {{obj.time}}</div>
+        </div>
+        <div class="boxii" align="center">
+            <i class="material-icons like__button number-{{obj.id}} " style="font-size: 36px ;">favorite_border</i>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
 
 </div>
-{% endfor %}
-</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock content %}

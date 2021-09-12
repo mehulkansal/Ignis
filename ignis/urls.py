@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.conf import settings
-from main.views import home, signup, signin, logout1, add
+from main.views import home, signup, signin, logout1, add, like, unlike
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
@@ -25,6 +25,9 @@ urlpatterns = [
     path('signin/', signin),
     path('logout/', logout1),
     path('date/', add),
+
+    path('post/like/<str:id>/', like),
+    path('post/unlike/<str:id>/', unlike),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

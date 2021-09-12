@@ -62,7 +62,7 @@ a:hover
 {
 padding:10%;
 margin:10%;
-width: 80%;
+width: 70%;
 height: 100%;
 border: 20px;
     border-color: chartreuse;
@@ -97,7 +97,7 @@ img {
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 5px;
-  
+  width: 200px;
   height: 100px;
 }
 
@@ -109,13 +109,14 @@ img:hover {
 {
   width:50%;
   height: 90px;
+  align-items: center;
 }
 .des
 {
     font-family: Montserrat, sans-serif;
 }
 .boxii:hover {
-  opacity:0.8;
+  opacity:0.5;
 }
 .h
 {
@@ -149,5 +150,9 @@ button
 }
 
 .add-color {
-  color: red;
+  color: #E98580;
+}
+.boxiit
+{
+  width: 30%;
 }
