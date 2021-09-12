@@ -2,16 +2,16 @@
 
 ## ScreenShots
  
-![Admin Panel](/markdown/Capture.png)
+![Admin Panel](/markdown/Capture.PNG)
 
-![Home](/markdown/Capture2.png)
+![Home](/markdown/Capture2.PNG)
 
-![AddEvent](/markdown/Capture3.png)
+![AddEvent](/markdown/Capture3.PNG)
 
-![Like /Unliked](/markdown/Capture4.png)
+![Like /Unliked](/markdown/Capture4.PNG)
 
-![home](/markdown/Capture1.png)
+![home](/markdown/Capture1.PNG)
 
-![Signup page](/markdown/signup.png)
+![Signup page](/markdown/signup.PNG)
 
-![Signin PAge](/markdown/signin.png)
+![Signin PAge](/markdown/signin.PNG)
